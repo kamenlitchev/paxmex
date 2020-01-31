@@ -60,7 +60,7 @@ module Paxmex
           '{'=>0, '}'=>0)
 
         parsed_value = value.to_i * (is_credit ? -1 : 1) / 100.0
-        BigDecimal.new(parsed_value.to_s, 7)
+        BigDecimal(parsed_value.to_s, 7)
       end
 
       def parse_julian_date(date_string)

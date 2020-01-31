@@ -1,3 +1,7 @@
+# 2.0.1
+* Fix Parser.new(...) to properly load content from file.
+* Prevent BigDecimal.new deprecation warning.
+
 # 2.0.0
 * Allow loading content from a string as well as from a file.
 * Introduce new public interface for parsing and loading, eg. Paxmex.epraw.parse(...).

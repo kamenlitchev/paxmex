@@ -26,6 +26,11 @@ describe Paxmex::Parser do
 
       expect(schema_1.to_h).to eq(schema_2.to_h)
     end
+
+    it 'accepts an epa file and a schema file' do
+      epa_file_with_schema = Paxmex::Parser.new(epa_file, schema_file_epa)
+      expect(epa_file_with_schema.raw).to eq(File.read(epa_file).chomp)
+    end
   end
 
   describe '#raw' do

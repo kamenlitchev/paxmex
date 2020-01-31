@@ -11,8 +11,13 @@ class Paxmex::Parser
   attr_reader :schema, :path
 
   def initialize(data, schema)
-    @data = data.chomp
     @parent_chain = []
+
+    if File.file?(data)
+      @data = File.read(data).chomp
+    else
+      @data = data.chomp
+    end
 
     if File.file?(schema)
       @schema = Paxmex::Schema.new(YAML.load_file(schema))
